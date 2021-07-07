@@ -27,3 +27,7 @@
 # マーケット
 
 １0代以上の日々のタイピングに悩む方及び、新しい娯楽を求める方。
+
+# 画面遷移図
+
+https://www.figma.com/file/eO5ZYtKJsJBzZp90RAhE4i/typingX?node-id=0%3A1
