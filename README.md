@@ -31,3 +31,7 @@
 # 画面遷移図
 
 https://www.figma.com/file/eO5ZYtKJsJBzZp90RAhE4i/typingX?node-id=0%3A1
+
+# ERD
+
+https://app.diagrams.net/?src=about#HH-hidetaka%2FtypingX%2Fmaster%2FtypingX.drawio
