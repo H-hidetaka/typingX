@@ -1,20 +1,19 @@
 <template>
   <v-row justify="center" align="center">
-    <h1>タイピングを楽しく学ぶ！</h1>
     <v-col cols="12" sm="8" md="6">
-      <!-- <img
+      <img
             background-align-right
             src="/pcman1.jpeg"
             alt="typingX"
             class="mb-1"
-          > -->
+          >
       <div class="text-center">
         <v-btn @click="getApi()">GET API</v-btn>
         <div>{{ message }}</div>
       </div>
       <v-card>
         <v-card-title class="headline">
-
+          タイピングを楽しく学ぶ！
         </v-card-title>
         <v-card-text>
           <p>タイピングが苦手な方や、ちょっとした暇を潰したい方に送る </p>
@@ -67,7 +66,7 @@
           <v-btn
             color="primary"
             nuxt
-            to="/game_list"
+            to="/gamelists/playable_game_collection/play_game"
           >
             スタート
           </v-btn>
