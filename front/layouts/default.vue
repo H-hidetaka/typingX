@@ -54,7 +54,7 @@
         icon
         @click.stop="rightDrawer = !rightDrawer"
       >
-        <v-icon>mdi-menu</v-icon>
+        <!-- <v-icon>mdi-menu</v-icon> -->
       </v-btn>
     </v-app-bar>
     <v-main>
@@ -62,23 +62,6 @@
         <Nuxt />
       </v-container>
     </v-main>
-    <v-navigation-drawer
-      v-model="rightDrawer"
-      :right="right"
-      temporary
-      fixed
-    >
-      <v-list>
-        <v-list-item @click.native="right = !right">
-          <v-list-item-action>
-            <v-icon light>
-              mdi-repeat
-            </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
     <v-footer
       :absolute="!fixed"
       app
@@ -93,24 +76,39 @@ export default {
   data () {
     return {
       clipped: false,
-      drawer: false,
+      drawer: true,
       fixed: false,
       items: [
         {
           icon: 'mdi-apps',
-          title: 'Welcome',
+          title: 'ホーム',
           to: '/'
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
+          icon: 'mdi-format-list-bulleted-triangle',
+          title: 'ゲーム一覧',
+          to: '/game_list'
+        },
+        {
+          icon: 'mdi-microsoft-xbox-controller',
+          title: 'ゲーム紹介',
+          to: '/game_list'
+        },
+        {
+          icon: 'mdi-human',
+          title: '日常',
+          to: '/game_list'
+        },
+        {
+          icon: 'mdi-keyboard-variant',
+          title: 'タイピング矯正',
+          to: '/game_list'
         }
       ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js'
+      title: 'typingX'
     }
   }
 }
