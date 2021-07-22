@@ -1,9 +1,10 @@
 <template>
-  <v-container fluid>
+  <v-container fluid class="orange lighten-4">
     <v-row>
       <v-col
-        class="orange lighten-4 pa-10"
         cols="12"
+        class="black--text "
+        max-width="1440 mx-auto"
       >
         <img
           align="right"
@@ -12,33 +13,30 @@
           height="100%"
           left="300px"
           top="500px"
-          md="12"
         >
-        <div>
         <h1
-          class="font-weight-black"
-          mt="10"
+          ma="10"
         >
         タイピングを楽しく学ぶ！
         </h1>
-        <p
-          m="100px"
+        <h2
           class="text-justify"
             >
-            タイピングが苦手な方や、ちょっとした
-            暇を潰したい方に送るタインピング型webサービス
-        </p>
+            <br>タイピングが苦手な方や、</br>
+            ちょっとした暇を潰したい方に送る</br>
+            タインピング型webサービス
+        </h2>
         <v-btn
-            color="primary"
+            color="black"
             nuxt
             to="/game_list"
-            align="center"
+
             justify-content="space-between"
           >
+          <spacer></spacer>
           <v-icon>mdi-gamepad-variant</v-icon>
             スタート
         </v-btn>
-        </div>
       </v-col>
       <v-col>
       </v-col>
