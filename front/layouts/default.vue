@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app >
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
@@ -36,26 +36,8 @@
       >
         <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
       </v-btn>
-      <v-btn
-        icon
-        @click.stop="clipped = !clipped"
-      >
-        <v-icon>mdi-application</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="fixed = !fixed"
-      >
-        <v-icon>mdi-minus</v-icon>
-      </v-btn>
       <v-toolbar-title v-text="title" />
       <v-spacer />
-      <v-btn
-        icon
-        @click.stop="rightDrawer = !rightDrawer"
-      >
-        <!-- <v-icon>mdi-menu</v-icon> -->
-      </v-btn>
     </v-app-bar>
     <v-main>
       <v-container>
@@ -66,7 +48,26 @@
       :absolute="!fixed"
       app
     >
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+      <span>&copy; {{ new Date().getFullYear() }}  </span>
+      <v-btn
+            color="black"
+            nuxt
+            to="/privacy_policy"
+            align="center"
+            justify-content="space-between"
+          >
+      プライバシーポリシー
+      </v-btn>
+      <v-btn
+            color="black"
+            nuxt
+            to="/terms_of_use"
+            align="center"
+            justify-content="space-between"
+          >
+      利用規約
+      </v-btn>
+
     </v-footer>
   </v-app>
 </template>
@@ -76,7 +77,7 @@ export default {
   data () {
     return {
       clipped: false,
-      drawer: true,
+      drawer: false,
       fixed: false,
       items: [
         {
@@ -92,17 +93,17 @@ export default {
         {
           icon: 'mdi-microsoft-xbox-controller',
           title: 'ゲーム紹介',
-          to: '/game_list'
+          to: '/gamelists/game_introduction'
         },
         {
           icon: 'mdi-human',
           title: '日常',
-          to: '/game_list'
+          to: '/gamelists/everyday'
         },
         {
           icon: 'mdi-keyboard-variant',
           title: 'タイピング矯正',
-          to: '/game_list'
+          to: '/gamelists/typing_correction'
         }
       ],
       miniVariant: false,
