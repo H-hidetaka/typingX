@@ -3,15 +3,6 @@
     class="mx-auto"
     max-width="1440"
   >
-    <!-- <v-toolbar
-      color="indigo"
-      dark
-    > -->
-      <!-- <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn> -->
-    <!-- </v-toolbar> -->
-
     <v-container fluid>
       <v-row dense>
         <v-col
@@ -25,10 +16,25 @@
               class="white--text align-end"
               gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
               height="200px"
-              nuxt
-              to="/"
             >
-              <v-card-title v-text="card.title"></v-card-title>
+             <v-btn
+              color="orange"
+              nuxt
+              to="/game_list/game_introduction"
+
+              justify-content="space-between"
+            >
+            <spacer></spacer>
+            <v-icon>mdi-gamepad-variant</v-icon>
+            スタート
+            </v-btn>
+
+              <v-card-title
+               v-text="card.title"
+               nuxt
+               to="/gamelist"
+               >
+               </v-card-title>
             </v-img>
 
             <v-card-actions>
@@ -45,9 +51,9 @@
   export default {
     data: () => ({
       cards: [
-        { title: 'ゲームリスト', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 12 },
-        { title: '日常', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 6 },
-        { title: 'タイピング矯正', src: '/static/keyboard_typing', flex: 6 },
+        { title: 'ゲーム紹介', src: '/various_game.jpg', flex: 12, path: "/game_introduction" },
+        { title: '日常', src: '/omoi_woman_omori_business.png', flex: 6 },
+        { title: 'タイピング矯正', src: '/keyboard_typing.png', flex: 6 },
       ],
     }),
   }

@@ -50,7 +50,7 @@
     >
       <span>&copy; {{ new Date().getFullYear() }}  </span>
       <v-btn
-            color="black"
+            color="white"
             nuxt
             to="/privacy_policy"
             align="center"
@@ -59,7 +59,7 @@
       プライバシーポリシー
       </v-btn>
       <v-btn
-            color="black"
+            color="white"
             nuxt
             to="/terms_of_use"
             align="center"

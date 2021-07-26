@@ -27,14 +27,14 @@
             タインピング型webサービス
         </h2>
         <v-btn
-            color="black"
+            color="orange"
             nuxt
             to="/game_list"
 
             justify-content="space-between"
           >
           <spacer></spacer>
-          <v-icon>mdi-gamepad-variant</v-icon>
+          <v-icon>mdi-gamepa</v-icon>
             スタート
         </v-btn>
       </v-col>
