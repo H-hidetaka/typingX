@@ -45,13 +45,13 @@
 </template>
 
 <script>
-import NuxtLogo from '~/components/NuxtLogo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
+// import NuxtLogo from '~/components/NuxtLogo.vue'
+// import VuetifyLogo from '~/components/VuetifyLogo.vue'
 
 export default {
   components: {
-    NuxtLogo,
-    VuetifyLogo
+    // NuxtLogo,
+    // VuetifyLogo
   },
   data: () => {
     return {

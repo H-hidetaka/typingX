@@ -1,7 +1,7 @@
 <template>
   <v-card
     class="mx-auto"
-    max-width="1440"
+    max-width="1200"
   >
     <v-container fluid>
       <v-row dense>
@@ -9,8 +9,9 @@
           v-for="card in cards"
           :key="card.title"
           :cols="card.flex"
+          :icons="card.icon"
         >
-          <v-card >
+          <v-card>
             <v-img
               :src="card.src"
               class="white--text align-end"
@@ -18,23 +19,18 @@
               height="200px"
             >
              <v-btn
-              color="orange"
-              nuxt
-              to="/game_list/game_introduction"
-
+              v-text="card.title"
+              icon="card.icon"
+              color="primary"
               justify-content="space-between"
-            >
-            <spacer></spacer>
-            <v-icon>mdi-gamepad-variant</v-icon>
-            スタート
-            </v-btn>
-
-              <v-card-title
-               v-text="card.title"
-               nuxt
-               to="/gamelist"
-               >
-               </v-card-title>
+             >
+              <v-icon
+                dark
+                right
+              >
+                mdi-checkbox-marked-circle
+              </v-icon>
+             </v-btn>
             </v-img>
 
             <v-card-actions>
@@ -51,10 +47,29 @@
   export default {
     data: () => ({
       cards: [
-        { title: 'ゲーム紹介', src: '/various_game.jpg', flex: 12, path: "/game_introduction" },
-        { title: '日常', src: '/omoi_woman_omori_business.png', flex: 6 },
-        { title: 'タイピング矯正', src: '/keyboard_typing.png', flex: 6 },
+        {
+          icon: 'mdi-gamepad-variant',
+          title: 'ゲーム紹介',
+          src: '/various_game.jpg',
+          flex: 12,
+          to: '/gamelists/game_introduction'
+          },
+        {
+          iconfont: 'mdi-gamepad-variant',
+          title: '日常',
+          src: '/life.jpg',
+          flex: 6,
+          to: '/gamelists/everyday'
+        },
+        {
+          iconfont: 'mdi-gamepad-variant',
+          title: 'タイピング矯正',
+          src: '/typing.jpeg',
+          flex: 6,
+          to: '/gamelists/typing_correction'
+          },
       ],
+
     }),
   }
 </script>

@@ -50,23 +50,31 @@
     >
       <span>&copy; {{ new Date().getFullYear() }}  </span>
       <v-btn
-            color="white"
+            color="black"
             nuxt
             to="/privacy_policy"
-            align="center"
-            justify-content="space-between"
+            text
           >
-      プライバシーポリシー
+        プライバシーポリシー
       </v-btn>
       <v-btn
-            color="white"
+            color="black"
             nuxt
             to="/terms_of_use"
-            align="center"
-            justify-content="space-between"
+            text
+            justify="space-around"
           >
-      利用規約
+        利用規約
       </v-btn>
+      <!-- <router-link
+                  to="/terms_of_use"
+                  tag="onclick"
+                  align="center"
+                  justify-content="space-between"
+                  cursor="onclick"
+          >
+          利用規約
+      </router-link> -->
 
     </v-footer>
   </v-app>
