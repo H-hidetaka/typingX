@@ -48,7 +48,7 @@
       :absolute="!fixed"
       app
     >
-      <span>&copy; {{ new Date().getFullYear() }}  </span>
+      <span>&copy;typingX {{ new Date().getFullYear() }}  </span>
       <v-btn
             color="black"
             nuxt

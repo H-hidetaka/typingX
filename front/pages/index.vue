@@ -1,61 +1,64 @@
 <template>
-  <v-container fluid class="orange lighten-4">
+  <v-container fluid>
     <v-row>
       <v-col
+        v-for="n in 1"
+        :key="n"
+        class="d-flex child-flex black--text"
         cols="12"
-        class="black--text "
-        max-width="1440 mx-auto"
       >
-        <img
-          align="right"
-          src="/pcman1.jpeg"
-          width="380px"
-          height="100%"
-          left="300px"
-          top="500px"
+        <v-card
+          class="ma-12"
+          width="400"
+          text
         >
-        <h1
-          ma="10"
+        <v-card
         >
-        タイピングを楽しく学ぶ！
-        </h1>
-        <h2
-          class="text-justify"
-            >
-            <br>タイピングが苦手な方や、</br>
-            ちょっとした暇を潰したい方に送る</br>
-            タインピング型webサービス
-        </h2>
-        <v-btn
-            color="orange"
-            nuxt
-            to="/game_list"
-
-            justify-content="space-between"
+          <img
+            align="right"
+            src="/pcman1.jpeg"
+            width="380px"
+            height="100%"
+            left="300px"
+            top="500px"
           >
-          <spacer></spacer>
-          <v-icon>mdi-gamepa</v-icon>
-            スタート
-        </v-btn>
-      </v-col>
-      <v-col>
+        </v-card>
+          <v-card-title class="headline">{{ title }}</v-card-title>
+          <!-- <v-card-subtitle>タイピングゲーム</v-card-subtitle> -->
+          <v-divider class="mx-3"></v-divider>
+          <v-card-text>
+            <div class="body-1 mb-1">
+              {{ message }}
+            </div>
+          </v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn
+              color="orange"
+              nuxt
+              to="/game_list"
+              justify-content="space-between"
+            >
+              <!-- <spacer></spacer> -->
+              <v-icon>
+              mdi-gamepad</v-icon>
+              スタート
+            </v-btn>
+          </v-card-actions>
+        </v-card>
       </v-col>
     </v-row>
   </v-container>
 </template>
 
-<script>
-// import NuxtLogo from '~/components/NuxtLogo.vue'
-// import VuetifyLogo from '~/components/VuetifyLogo.vue'
+<script lang="ts">
+import Vue, { PropOptions } from 'vue';
 
-export default {
-  components: {
-    // NuxtLogo,
-    // VuetifyLogo
-  },
+export default Vue.extend({
   data: () => {
     return {
-      message: '',
+      title: 'タイピングを楽しく学ぶ！',
+      message: 'タイピングが苦手な方や、ちょっとした暇を潰したい方に送るタインピング型webサービス',
       items: [
         {
           icon: 'mdi-gamepad-variant',
@@ -65,18 +68,5 @@ export default {
       ]
     }
   },
-
-  methods: {
-    getApi() {
-      const url = "/api/v1/posts"
-      this.$axios.get(url)
-        .then((res) => {
-          this.message = res.data
-        })
-        .catch((error) => {
-          console.log(error)
-        })
-    }
-  },
-}
+})
 </script>

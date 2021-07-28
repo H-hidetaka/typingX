@@ -10,6 +10,7 @@
           :key="card.title"
           :cols="card.flex"
           :icons="card.icon"
+          :to="card.to"
         >
           <v-card>
             <v-img
@@ -20,15 +21,12 @@
             >
              <v-btn
               v-text="card.title"
-              icon="card.icon"
               color="primary"
-              justify-content="space-between"
+              nuxt
+              to="/gamelists/everyday"
              >
-              <v-icon
-                dark
-                right
-              >
-                mdi-checkbox-marked-circle
+              <v-icon>
+                mdi-gamepad
               </v-icon>
              </v-btn>
             </v-img>
@@ -43,8 +41,8 @@
   </v-card>
 </template>
 
-<script>
-  export default {
+<script lang="ts">
+export default {
     data: () => ({
       cards: [
         {
