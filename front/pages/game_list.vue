@@ -9,25 +9,25 @@
           v-for="card in cards"
           :key="card.title"
           :cols="card.flex"
-          :icons="card.icon"
-          :to="card.to"
         >
           <v-card>
             <v-img
               :src="card.src"
-              class="white--text align-end"
+              class="align-end"
               gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
               height="200px"
             >
              <v-btn
               v-text="card.title"
-              color="primary"
+              color="blue-grey lighten-1 white--text"
               nuxt
-              to="/gamelists/everyday"
+              :href="card.to"
              >
               <v-icon>
                 mdi-gamepad
               </v-icon>
+             </v-btn>
+             </v-btn>
              </v-btn>
             </v-img>
 
