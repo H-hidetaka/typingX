@@ -1,34 +1,31 @@
 <template>
   <v-card
     class="mx-auto"
-    max-width="1440"
+    max-width="1200"
   >
-    <!-- <v-toolbar
-      color="indigo"
-      dark
-    > -->
-      <!-- <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn> -->
-    <!-- </v-toolbar> -->
-
     <v-container fluid>
       <v-row dense>
         <v-col
           v-for="card in cards"
           :key="card.title"
           :cols="card.flex"
+          :card="card"
         >
-          <v-card >
+          <v-card>
             <v-img
               :src="card.src"
-              class="white--text align-end"
+              class="align-end"
               gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
               height="200px"
-              nuxt
-              to="/"
             >
-              <v-card-title v-text="card.title"></v-card-title>
+             <v-btn
+              v-text="card.title"
+              color="blue-grey lighten-1 white--text"
+              nuxt
+              :href="card.to"
+             >
+                <v-icon>{{ card.icon }}</v-icon>
+             </v-btn>
             </v-img>
 
             <v-card-actions>
@@ -41,14 +38,34 @@
   </v-card>
 </template>
 
-<script>
-  export default {
+<script lang="ts">
+import Vue, { PropOptions } from 'vue';
+
+export default Vue.extend({
     data: () => ({
       cards: [
-        { title: 'ゲームリスト', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 12 },
-        { title: '日常', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 6 },
-        { title: 'タイピング矯正', src: '/static/keyboard_typing', flex: 6 },
+        {
+          title: 'ゲーム紹介',
+          src: '/various_game.jpg',
+          flex: 12,
+          to: '/gamelists/game_introduction',
+          icon: 'mdi-gamepad-variant'
+          },
+        {
+          title: '日常',
+          src: '/life.jpg',
+          flex: 6,
+          to: '/gamelists/everyday',
+          icon: 'mdi-gamepad'
+        },
+        {
+          title: 'タイピング矯正',
+          src: '/typing.jpeg',
+          flex: 6,
+          to: '/gamelists/typing_correction',
+          icon: 'mdi-gamepad-variant'
+        },
       ],
     }),
-  }
+  })
 </script>

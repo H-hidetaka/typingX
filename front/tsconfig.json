@@ -24,13 +24,26 @@
       ]
     },
     "types": [
+      "@types/node",
+      "@nuxtjs/axios",
+      "@nuxtjs/vue-app",
       "@nuxt/types",
-      "@types/node"
+      "./types"
     ]
   },
-  "exclude": [
-    "node_modules",
-    ".nuxt",
-    "dist"
-  ]
+  // "include": [
+  //   "types/**/*",
+  //   "components/**/*",
+  //   "layouts/**/*",
+  //   "middleware/**/*",
+  //   "pages/**/*",
+  //   "plugins/**/*",
+  //   "server/**/*",
+  //   "store/**/*"
+  // ],
+  // "exclude": [
+  //   "node_modules",
+  //   ".nuxt",
+  //   "dist"
+  // ]
 }

@@ -1,82 +1,65 @@
 <template>
-  <v-container fluid class="orange lighten-4">
-    <v-row>
-      <v-col
-        cols="12"
-        class="black--text "
-        max-width="1440 mx-auto"
+  <v-container fluid >
+      <v-parallax
+        src="/laptop2.png"
+        class="fill-height repeating-gradient"
       >
-        <img
-          align="right"
-          src="/pcman1.jpeg"
-          width="380px"
-          height="100%"
-          left="300px"
-          top="500px"
+        <v-row
+          align="center"
+          justify="center"
+          class="blue-grey--text text--lighten-1"
         >
-        <h1
-          ma="10"
-        >
-        タイピングを楽しく学ぶ！
-        </h1>
-        <h2
-          class="text-justify"
-            >
-            <br>タイピングが苦手な方や、</br>
-            ちょっとした暇を潰したい方に送る</br>
-            タインピング型webサービス
-        </h2>
-        <v-btn
-            color="black"
+          <v-col
+            class="text-center"
+            cols="12"
+          >
+          <h1 class="text-h4 font-weight-thin mb-4">
+            {{ title }}
+          </h1>
+          <h4 class="subheading">
+            {{ message }}
+          </h4>
+          <v-btn
+            color="blue-grey lighten-1"
+            class="white--text text--lighten-1"
             nuxt
             to="/game_list"
-
             justify-content="space-between"
           >
           <spacer></spacer>
-          <v-icon>mdi-gamepad-variant</v-icon>
+            <v-icon>mdi-gamepad</v-icon>
             スタート
-        </v-btn>
-      </v-col>
-      <v-col>
-      </v-col>
-    </v-row>
+          </v-btn>
+        </v-col>
+      </v-row>
+    </v-parallax>
   </v-container>
 </template>
 
-<script>
-import NuxtLogo from '~/components/NuxtLogo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
+<script lang="ts">
+import Vue, { PropOptions } from 'vue';
 
-export default {
-  components: {
-    NuxtLogo,
-    VuetifyLogo
-  },
+export default Vue.extend({
   data: () => {
     return {
-      message: '',
-      items: [
-        {
-          icon: 'mdi-gamepad-variant',
-          title: 'スタート',
-          to: '/game_list'
-        }
-      ]
+      title: 'タイピングを楽しく学ぶ！',
+      message: 'タイピングが苦手な方や、ちょっとした暇を潰したい方に送るタインピング型webサービス',
     }
   },
-
-  methods: {
-    getApi() {
-      const url = "/api/v1/posts"
-      this.$axios.get(url)
-        .then((res) => {
-          this.message = res.data
-        })
-        .catch((error) => {
-          console.log(error)
-        })
-    }
-  },
-}
+})
 </script>
+
+<style scoped>
+  .bottom-gradient {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, transparent 72px);
+  }
+
+  .repeating-gradient {
+    background-image: repeating-linear-gradient(-45deg,
+                        rgba(255,0,0,.25),
+                        rgba(255,0,0,.25) 5px,
+                        rgba(0,0,255,.25) 5px,
+                        rgba(0,0,255,.25) 10px
+                      );
+  }
+</style>
