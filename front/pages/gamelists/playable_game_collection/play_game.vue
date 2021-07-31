@@ -1,27 +1,18 @@
 <template>
   <div class="container">
     <div>
-      <MyButton />
+      <Typing />
     </div>
   </div>
 </template>
 
 <script>
-import MyButton from "~/components/MyButton.vue";
-export default {
-  components: {
-    MyButton
-  }
-};
-</script>
+import Vue from 'vue'
+import Typing from "~/components/Typing.vue"
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: left;
-  align-items: left;
-  text-align: left;
-}
-</style>
+export default Vue.extend({
+  components: {
+    Typing
+  }
+})
+</script>

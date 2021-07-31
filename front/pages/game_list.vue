@@ -9,6 +9,7 @@
           v-for="card in cards"
           :key="card.title"
           :cols="card.flex"
+          :card="card"
         >
           <v-card>
             <v-img
@@ -23,11 +24,7 @@
               nuxt
               :href="card.to"
              >
-              <v-icon>
-                mdi-gamepad
-              </v-icon>
-             </v-btn>
-             </v-btn>
+                <v-icon>{{ card.icon }}</v-icon>
              </v-btn>
             </v-img>
 
@@ -42,32 +39,33 @@
 </template>
 
 <script lang="ts">
-export default {
+import Vue, { PropOptions } from 'vue';
+
+export default Vue.extend({
     data: () => ({
       cards: [
         {
-          icon: 'mdi-gamepad-variant',
           title: 'ゲーム紹介',
           src: '/various_game.jpg',
           flex: 12,
-          to: '/gamelists/game_introduction'
+          to: '/gamelists/game_introduction',
+          icon: 'mdi-gamepad-variant'
           },
         {
-          iconfont: 'mdi-gamepad-variant',
           title: '日常',
           src: '/life.jpg',
           flex: 6,
-          to: '/gamelists/everyday'
+          to: '/gamelists/everyday',
+          icon: 'mdi-gamepad'
         },
         {
-          iconfont: 'mdi-gamepad-variant',
           title: 'タイピング矯正',
           src: '/typing.jpeg',
           flex: 6,
-          to: '/gamelists/typing_correction'
-          },
+          to: '/gamelists/typing_correction',
+          icon: 'mdi-gamepad-variant'
+        },
       ],
-
     }),
-  }
+  })
 </script>
