@@ -16,7 +16,6 @@ import Vue, { PropOptions } from 'vue';
 export default Vue.extend({
     data() {
         return {
-
             words: ['apple', 'banana', 'grape', 'aiueo'],
             word: '',
             pressed: '',

@@ -79,24 +79,24 @@
 <script>
 
 export default {
-  components: {
-  },
-  data: () => {
-    return {
-      message: ''
+    components: {
+    },
+    data: () => {
+        return {
+            message: ''
+        };
+    },
+    methods: {
+        getApi() {
+            const url = '/api/v1/posts';
+            this.$axios.get(url)
+                .then((res) => {
+                    this.message = res.data;
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        }
     }
-  },
-  methods: {
-    getApi() {
-      const url = "/api/v1/posts"
-      this.$axios.get(url)
-        .then((res) => {
-          this.message = res.data
-        })
-        .catch((error) => {
-          console.log(error)
-        })
-    }
-  }
-}
+};
 </script>

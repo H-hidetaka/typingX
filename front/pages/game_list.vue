@@ -18,14 +18,14 @@
               gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
               height="200px"
             >
-             <v-btn
-              v-text="card.title"
-              color="blue-grey lighten-1 white--text"
-              nuxt
-              :href="card.to"
-             >
-                <v-icon>{{ card.icon }}</v-icon>
-             </v-btn>
+            <v-btn
+            v-text="card.title"
+            color="blue-grey lighten-1 white--text"
+            nuxt
+            :href="card.to"
+            >
+              <v-icon>{{ card.icon }}</v-icon>
+            </v-btn>
             </v-img>
 
             <v-card-actions>
@@ -39,33 +39,33 @@
 </template>
 
 <script lang="ts">
-import Vue, { PropOptions } from 'vue';
+import Vue from 'vue';
 
 export default Vue.extend({
     data: () => ({
-      cards: [
-        {
-          title: 'ゲーム紹介',
-          src: '/various_game.jpg',
-          flex: 12,
-          to: '/gamelists/game_introduction',
-          icon: 'mdi-gamepad-variant'
-          },
-        {
-          title: '日常',
-          src: '/life.jpg',
-          flex: 6,
-          to: '/gamelists/everyday',
-          icon: 'mdi-gamepad'
-        },
-        {
-          title: 'タイピング矯正',
-          src: '/typing.jpeg',
-          flex: 6,
-          to: '/gamelists/typing_correction',
-          icon: 'mdi-gamepad-variant'
-        },
-      ],
+        cards: [
+            {
+                title: 'ゲーム紹介',
+                src: '/various_game.jpg',
+                flex: 12,
+                to: '/gamelists/game_introduction',
+                icon: 'mdi-gamepad-variant'
+            },
+            {
+                title: '日常',
+                src: '/life.jpg',
+                flex: 6,
+                to: '/gamelists/everyday',
+                icon: 'mdi-gamepad'
+            },
+            {
+                title: 'タイピング矯正',
+                src: '/typing.jpeg',
+                flex: 6,
+                to: '/gamelists/typing_correction',
+                icon: 'mdi-gamepad-variant'
+            },
+        ],
     }),
-  })
+});
 </script>

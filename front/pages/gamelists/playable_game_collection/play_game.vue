@@ -7,12 +7,12 @@
 </template>
 
 <script>
-import Vue from 'vue'
-import Typing from "~/components/Typing.vue"
+import Vue from 'vue';
+import Typing from '~/components/Typing.vue';
 
 export default Vue.extend({
-  components: {
-    Typing
-  }
-})
+    components: {
+        Typing
+    }
+});
 </script>
