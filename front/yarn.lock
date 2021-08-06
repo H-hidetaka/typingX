@@ -9733,6 +9733,11 @@ signal-exit@^3.0.2, signal-exit@^3.0.3:
   resolved "https://registry.npmjs.org/signal-exit/-/signal-exit-3.0.3.tgz"
   integrity sha512-VUJ49FC8U1OxwZLxIbTTrDvLnf/6TDgxZcK8wxR8zs13xpx7xbG60ndBlhNrFi2EMuFRoeDoJO7wthSLq42EjA==
 
+simple-keyboard@^3.2.35:
+  version "3.2.35"
+  resolved "https://registry.yarnpkg.com/simple-keyboard/-/simple-keyboard-3.2.35.tgz#3e38410a8dcad6416a718214867f4409b4ef05f6"
+  integrity sha512-OvGKzL3wzDudKd2djaRMqUGxoeSDxjGqYX4DJDJ5+JHTtMadWSLBh/dhW5ShbKb6nr6dYoySo69ogFVzXmy/6Q==
+
 simple-swizzle@^0.2.2:
   version "0.2.2"
   resolved "https://registry.npmjs.org/simple-swizzle/-/simple-swizzle-0.2.2.tgz"
