@@ -1,0 +1,20 @@
+{
+  "ja": [
+  {"id": 1, "content": "魔法"},
+  {"id": 2, "content": "たたかう"},
+  {"id": 3, "content": "アイテム"},
+  {"id": 4, "content": "あいうえお"},
+  {"id": 5, "content": "りんご"},
+  {"id": 6, "content": "魔大戦と呼ばれる戦いがあった"},
+  {"id": 6, "content": "頭にドリル"}
+  ],
+  "words": [
+    {"jaId": 1, "id": 1, "name": "mahou"},
+    {"jaId": 2, "id": 2, "name": "tatakau"},
+    {"jaId": 3, "id": 3, "name": "aitemu"},
+    {"jaId": 4, "id": 4, "name": "aiueo"},
+    {"jaId": 5, "id": 5, "name": "ringo"},
+    {"jaId": 6, "id": 6, "name": "mataisenntoyobarerutatakaigaatta"},
+    {"jaId": 6, "id": 6, "name": "mataisenntoyobarerutatakaigaatta"}
+  ]
+}
