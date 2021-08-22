@@ -6,13 +6,13 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import Vue from 'vue'
-import Typing from "~/components/Typing.vue"
+import Typing from '~/components/Typing.vue'
 
 export default Vue.extend({
-  components: {
-    Typing
-  }
-})
+    components: {
+        Typing
+    }
+});
 </script>

@@ -29,23 +29,23 @@
 import Vue from 'vue';
 
 export default Vue.extend({
-  data () {
-    return {
-      colors: [
-        'indigo',
-        'warning',
-        'pink darken-2',
-        'red lighten-1',
-        'deep-purple accent-4',
-      ],
-      slides: [
-        'First',
-        'Second',
-        'Third',
-        'Fourth',
-        'Fifth',
-      ],
-    }
-  },
-})
+    data () {
+        return {
+            colors: [
+                'indigo',
+                'warning',
+                'pink darken-2',
+                'red lighten-1',
+                'deep-purple accent-4',
+            ],
+            slides: [
+                'First',
+                'Second',
+                'Third',
+                'Fourth',
+                'Fifth',
+            ],
+        };
+    },
+});
 </script>

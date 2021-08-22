@@ -40,13 +40,13 @@
 import Vue, { PropOptions } from 'vue';
 
 export default Vue.extend({
-  data: () => {
-    return {
-      title: 'タイピングを楽しく学ぶ！',
-      message: 'タイピングが苦手な方や、ちょっとした暇を潰したい方に送るタインピング型webサービス',
-    }
-  },
-})
+    data: () => {
+        return {
+            title: 'タイピングを楽しく学ぶ！',
+            message: 'タイピングが苦手な方や、ちょっとした暇を潰したい方に送るタインピング型webサービス',
+        };
+    },
+});
 </script>
 
 <style scoped>

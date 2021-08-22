@@ -24,10 +24,10 @@
 
 <script>
 export default {
-  data() {
-    return {
-      title: 'GDrive Manager'
+    data() {
+        return {
+            title: 'GDrive Manager'
+        };
     }
-  }
-}
+};
 </script>

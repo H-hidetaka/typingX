@@ -82,43 +82,43 @@
 
 <script>
 export default {
-  data () {
-    return {
-      clipped: false,
-      drawer: false,
-      fixed: false,
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'ホーム',
-          to: '/'
-        },
-        {
-          icon: 'mdi-format-list-bulleted-triangle',
-          title: 'ゲーム一覧',
-          to: '/game_list'
-        },
-        {
-          icon: 'mdi-microsoft-xbox-controller',
-          title: 'ゲーム紹介',
-          to: '/gamelists/game_introduction'
-        },
-        {
-          icon: 'mdi-human',
-          title: '日常',
-          to: '/gamelists/everyday'
-        },
-        {
-          icon: 'mdi-keyboard-variant',
-          title: 'タイピング矯正',
-          to: '/gamelists/typing_correction'
-        }
-      ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'typingX'
+    data () {
+        return {
+            clipped: false,
+            drawer: false,
+            fixed: false,
+            items: [
+                {
+                    icon: 'mdi-apps',
+                    title: 'ホーム',
+                    to: '/'
+                },
+                {
+                    icon: 'mdi-format-list-bulleted-triangle',
+                    title: 'ゲーム一覧',
+                    to: '/game_list'
+                },
+                {
+                    icon: 'mdi-microsoft-xbox-controller',
+                    title: 'ゲーム紹介',
+                    to: '/gamelists/game_introduction'
+                },
+                {
+                    icon: 'mdi-human',
+                    title: '日常',
+                    to: '/gamelists/everyday'
+                },
+                {
+                    icon: 'mdi-keyboard-variant',
+                    title: 'タイピング矯正',
+                    to: '/gamelists/typing_correction'
+                }
+            ],
+            miniVariant: false,
+            right: true,
+            rightDrawer: false,
+            title: 'typingX'
+        };
     }
-  }
-}
+};
 </script>
