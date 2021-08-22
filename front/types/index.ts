@@ -1,74 +1,55 @@
 const retrogamesData = [
   {
+    name: '魔大戦',
+    roman: 'mataisenn',
+  },
+  {
     name: 'ゴールドシップ',
-    roman: 'go-rudoshippu',
-    src: 'goldship'
+    roman: 'go-rudoshippu'
   },
   {
     name: 'ライスシャワー',
-    roman: 'raisushawa-',
-    src: 'shower'
-  },
+    roman: 'raisushawa-'  },
   {
     name: 'アグネスタキオン',
-    roman: 'agunesutakion',
-    src: 'tachyon'
+    roman: 'agunesutakion'
   },
   {
     name: 'スペシャルウィーク',
-    roman: 'supesharuwi-ku',
-    src: 'week'
-  },
+    roman: 'supesharuwi-ku'},
   {
     name: 'サイレンススズカ',
-    roman: 'sairensusuzuka',
-    src: 'suzuka'
-  },
+    roman: 'sairensusuzuka'  },
   {
     name: 'トウカイテイオー',
-    roman: 'toukaiteio-',
-    src: 'teio'
-  },
+    roman: 'toukaiteio-'},
   {
     name: 'ウオッカ',
-    roman: 'uokka',
-    src: 'vodka'
-  },
+    roman: 'uokka' },
   {
     name: 'エアグルーヴ',
-    roman: 'eaguru-vu',
-    src: 'groove'
-  },
+    roman: 'eaguru-vu'  },
   {
     name: 'オグリキャップ',
     roman: 'ogurikyappu',
-    src: 'cap'
-  },
   {
     name: 'グラスワンダー',
-    roman: 'gurasuwanda-',
-    src: 'wonder'
-  },
+    roman: 'gurasuwanda-'  },
   {
     name: 'シンボリルドルフ',
-    roman: 'shinborirudoruhu',
-    src: 'rudolfu'
+    roman: 'shinborirudoruhu'
   },
   {
     name: 'ダイワスカーレット',
-    roman: 'daiwasuka-retto',
-    src: 'scarlet'
+    roman: 'daiwasuka-retto'
   },
   {
     name: 'メジロマックイーン',
-    roman: 'meziromakkui-nn',
-    src: 'mcqueen'
+    roman: 'meziromakkui-nn'
   },
   {
     name: 'ハルウララ',
-    roman: 'haruurara',
-    src: 'urara'
-  }
+    roman: 'haruurara' }
 ]
 
 export {

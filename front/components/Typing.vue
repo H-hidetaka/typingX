@@ -6,7 +6,7 @@
             class="w-full"
             src="background.png"
             alt="ウマ娘プリティーダービー">
-        </figure>
+        </figure> -->
         <!-- <select name="ja_id" v-model="selectedJaId" @change="onchangeJa">
             <option></option>
             <option v-for="ja in jas" :value="ja.id" v-text="ja.name"></option>
@@ -14,7 +14,7 @@
         <select name="word_id" v-model="selectedWordId">
             <option></option>
             <option v-for="ward in filteredWords" :value="word.id" v-text="word.name"></option>
-        </select> -->
+        </select>
     <br>{{ jaword }}<br>
     <h1><span>{{ pressed }}</span>{{ word }}</h1>
     <br>

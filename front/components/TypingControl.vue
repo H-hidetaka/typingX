@@ -1,8 +1,10 @@
-<script　lang="ts">
-// import { computed, reactive, toRefs } from 'vue'
+<script lang="ts">
+// option Api
 import Vue from 'vue'
+// プロパティの状態とその状態を戻す値をこのコンポーネントにとり入れる
 import { StateProps, ReturnStateProps } from '@/types'
-import { retrogamesData } from '@/static'
+// types直下からretrogamesDataを呼びだす
+import { retrogamesData } from '~/types'
 
 export default Vue.extend({
 const TypingControl = (): ReturnStateProps => {
@@ -16,7 +18,7 @@ const TypingControl = (): ReturnStateProps => {
     timerId: null
   }
   const state = reactive<StateProps>({ ...defaultState })
-  const audio = new Audio(require('@/static/魔王魂 効果音 システム36.mp3'))
+  const audio = new Audio(require('@/static/misstype.mp3'))
 
   const correctTypingAverage = computed(() => {
     const sum = state.typingCount + state.missTypingCount
@@ -38,7 +40,7 @@ const TypingControl = (): ReturnStateProps => {
     if (keycode === splitRomanChar[0]) {
       state.isValid = false
       state.typingCount++
-      state.horsesReactiveData[randomNumber.value].roman = selectedHorse.value.roman.slice(1)
+      state.retrogamesDataData[randomNumber.value].roman = selectedHorse.value.roman.slice(1)
       if (!selectedHorse.value.roman.length) {
         state.horsesReactiveData.splice(randomNumber.value, 1)
         // 全てタイピングし終わった時
@@ -73,7 +75,4 @@ const TypingControl = (): ReturnStateProps => {
     startTimer
   }
 })
-
-export type TypingStore = ReturnType<typeof useTyping>
-
 </script>
