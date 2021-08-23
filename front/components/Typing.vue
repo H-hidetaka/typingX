@@ -6,15 +6,7 @@
             class="w-full"
             src="background.png"
             alt="ウマ娘プリティーダービー">
-        </figure> -->
-        <!-- <select name="ja_id" v-model="selectedJaId" @change="onchangeJa">
-            <option></option>
-            <option v-for="ja in jas" :value="ja.id" v-text="ja.name"></option>
-        </select>
-        <select name="word_id" v-model="selectedWordId">
-            <option></option>
-            <option v-for="ward in filteredWords" :value="word.id" v-text="word.name"></option>
-        </select>
+        </figure>
     <br>{{ jaword }}<br>
     <h1><span>{{ pressed }}</span>{{ word }}</h1>
     <br>
@@ -30,9 +22,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-// import Type from 'type';
 import App from "./App";
-import { StateProps, Return}
 
 Vue.config.productionTip = false;
 
@@ -42,7 +32,7 @@ export default Vue.extend({
     },
 data() {
     return {
-    // jaword: ['りんご','魔大戦'],
+    jaword: ['魔大戦'],
     jawords: '',
     words: ['apple', 'mataisenntoyobarerutatakaigaatta','aiueo'],
     word: '',
