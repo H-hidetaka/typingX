@@ -1,5 +1,12 @@
 type PhaseProps = ''
 
+interface CardProps {
+  title: string
+  src: string
+  flex: number
+  icon: any
+  to: string
+} as
 
 interface RetroGameProps {
   name: string
