@@ -1,4 +1,25 @@
-// <script lang="ts">
+
+やりたいこと
+
+文字の認識を２通りできれば認識させる（ca,ka)
+mac基準
+あ
+
+rails api からデータを取得し、
+受け取ったデータを画面に表示する。
+コンポーネントなので、fetchで受け取る
+
+<script lang="ts">
+import Vue from 'vue'
+import { RetroGameProps } from '@/types'
+
+export default Vue.extend({
+  interface RetroGameProps {
+  name: string
+  roman: string
+  src: string
+}
+})
 // import Vue from 'vue'
 // import { StateProps, ReturnStateProps } from '@/types'
 // import { retrogamesData } from '~/types'
@@ -61,3 +82,4 @@
 //   }
 // })
 // </script>
+</script>

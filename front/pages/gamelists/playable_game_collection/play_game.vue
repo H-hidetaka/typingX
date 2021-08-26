@@ -3,6 +3,9 @@
     <div>
       <Typing />
     </div>
+    <div>
+      <App />
+    </div>
   </div>
 </template>
 

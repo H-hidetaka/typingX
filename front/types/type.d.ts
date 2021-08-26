@@ -17,10 +17,6 @@ interface StateProps {
   timerId: any
 }
 
-type
-
-
-
 export interface TypeData {
   type: {
     name: string

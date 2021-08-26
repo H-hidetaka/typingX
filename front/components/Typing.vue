@@ -14,9 +14,6 @@
     miss:{{ miss }}
     </div>
     <div v-else>Spaceでスタート</div>
-    <div>
-    <App />
-    </div>
 </div>
 </template>
 
