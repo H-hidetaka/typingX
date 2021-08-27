@@ -75,14 +75,6 @@ export default {
         }
     },
 
-    typescript: {
-        typeCheck: {
-          eslint: {
-            files: './src/**/*.{ts,js,vue}'
-          }
-        }
-      }
-    }
     // Build Configuration: https://go.nuxtjs.dev/config-build
     build: {
     }

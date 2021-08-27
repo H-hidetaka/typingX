@@ -1,7 +1,7 @@
 <script lang="ts">
 import Vue from 'vue'
-import { RetroGameProps } from '@/types'
-
+//@ts-ignore
+import { RetroGameProps } from '../types'
 
 export default Vue.extend({
 })

@@ -43,7 +43,7 @@ import Vue from 'vue';
 import { CardProps } from '@/types'
 
 export default Vue.extend({
-    data: ( CardProps: any ) => ({
+    data: (): CardProps => ({
         cards: [
             {
                 title: 'ゲーム紹介',

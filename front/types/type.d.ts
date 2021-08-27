@@ -1,14 +1,14 @@
 type PhaseProps = ''
 
-interface CardProps {
+export interface CardProps {
   title: string
   src: string
   flex: number
-  icon: any
   to: string
-} as
+  icon: string
+}
 
-interface RetroGameProps {
+export interface RetroGameProps {
   name: string
   roman: string
   src: string

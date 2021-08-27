@@ -7,6 +7,14 @@ import Vue from 'vue';
 import Keyboard from "simple-keyboard";
 import "simple-keyboard/build/css/index.css";
 
+interface keyboard {
+  name: string
+  keyboardClass: string
+  onChange: string
+  onKeyPress: string
+
+
+}
 export default Vue.extend({
   name: "SimpleKeyboard",
   props: {

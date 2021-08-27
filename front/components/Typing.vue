@@ -19,14 +19,10 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import App from "./App";
 
 Vue.config.productionTip = false;
 
 export default Vue.extend({
-    components: {
-        App
-    },
 data() {
     return {
     jaword: ['魔大戦'],
