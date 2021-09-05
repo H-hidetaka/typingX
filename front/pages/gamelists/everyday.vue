@@ -3,14 +3,16 @@
     <v-row justify="center">
       <v-col
         v-for="n in 25"
-        :key="n"
+        :key="n.title"
         cols="auto"
+        :card="card"
       >
         <v-card
           :elevation="n - 1"
-          height="100"
-          width="100"
+          height="150"
+          width="150"
           class="secondary"
+          onClick="message"
         >
           <v-row
             class="fill-height"
@@ -23,3 +25,24 @@
     </v-row>
   </v-container>
 </template>
+
+<script lang="ts">
+import Vue from 'vue';
+
+interface data{
+  }
+
+export default Vue.extend({
+  data: () => ({
+
+    cards: [
+      {
+        title: 'ちくわ',
+        src:'/various_game.jpg',
+        to:'/gamelists/retro_game_introduction',
+        icon:'mdi-gamepad-variant'
+      }
+    ]
+  })
+})
+</script>
