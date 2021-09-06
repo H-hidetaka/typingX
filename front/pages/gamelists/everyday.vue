@@ -1,25 +1,25 @@
 <template>
-  <v-container>
+  <v-container fluid>
     <v-row justify="center">
       <v-col
-        v-for="n in 25"
-        :key="n.title"
+        v-for="card in cards"
+        :key="card.title"
         cols="auto"
         :card="card"
       >
         <v-card
           :elevation="n - 1"
-          height="150"
-          width="150"
+          :height="150"
+          :width="150"
           class="secondary"
-          onClick="message"
+          :href="card.to"
         >
-          <v-row
-            class="fill-height"
-            align="center"
-            justify="center"
-            v-text="n - 1"
-          ></v-row>
+            <v-row
+              class="fill-height"
+              align="center"
+              justify="center"
+              v-text="n - 1"
+            ></v-row>
         </v-card>
       </v-col>
     </v-row>
@@ -41,7 +41,25 @@ export default Vue.extend({
         src:'/various_game.jpg',
         to:'/gamelists/retro_game_introduction',
         icon:'mdi-gamepad-variant'
-      }
+      },
+      {
+        title: 'ちくわ',
+        src:'/various_game.jpg',
+        to:'/gamelists/playable_game_collection/play_game',
+        icon:'mdi-gamepad-variant'
+      },
+      {
+        title: 'ちくわ',
+        src:'/various_game.jpg',
+        to:'/gamelists/retro_game_introduction',
+        icon:'mdi-gamepad-variant'
+      },
+      {
+        title: 'ちくわ',
+        src:'/various_game.jpg',
+        to:'/gamelists/retro_game_introduction',
+        icon:'mdi-gamepad-variant'
+      },
     ]
   })
 })
