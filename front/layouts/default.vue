@@ -101,7 +101,7 @@ export default {
                 {
                     icon: 'mdi-microsoft-xbox-controller',
                     title: 'ゲーム紹介',
-                    to: '/gamelists/game_introduction'
+                    to: '/gamelists/retro_game_introduction'
                 },
                 {
                     icon: 'mdi-human',

@@ -1,51 +1,61 @@
 <template>
-<v-container>
+  <v-container fluid>
     <v-row justify="center">
       <v-col
-        v-for="n in 14"
-        :key="n"
+        v-for="card in cards"
+        :key="card.title"
         cols="auto"
+        :card="card"
       >
-        <v-card dark color="black" width="200" height="200" class="ma-2">
-          <v-card-title class="headline">title</v-card-title>
-          <v-card-subtitle>card subtitle</v-card-subtitle>
-          <v-divider class="mx-3"></v-divider>
-          <v-card-text>
-            <div class="body-1 mb-1">card text. card text. card text. card text. card text. card text. card text. card text. card text. card text. card text.</div>
-            <div class="body-2 mb-1">card text. card text. card text. card text. card text. card text. card text. card text. card text. card text. card text.</div>
-          </v-card-text>
-          <v-card-actions>
-            <v-spacer></v-spacer>
-            <!-- <v-btn small>OK</v-btn>
-            <v-btn x-small>Cancel</v-btn> -->
-          </v-card-actions>
-          </v-card>
+        <v-card
+          :elevation="n - 1"
+          :height="150"
+          :width="150"
+          class="secondary"
+          :href="card.to"
+        >
+            <v-row
+              class="fill-height"
+              align="center"
+              justify="center"
+              v-text="n - 1"
+            ></v-row>
+        </v-card>
       </v-col>
     </v-row>
-</v-container>
+  </v-container>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
 
 export default Vue.extend({
-    data () {
-        return {
-            colors: [
-                'indigo',
-                'warning',
-                'pink darken-2',
-                'red lighten-1',
-                'deep-purple accent-4',
-            ],
-            slides: [
-                'First',
-                'Second',
-                'Third',
-                'Fourth',
-                'Fifth',
-            ],
-        };
-    },
-});
+  data: () => ({
+
+    cards: [
+      {
+        title: 'ちくわ',
+        src:'/various_game.jpg',
+        to:'/gamelists/retro_game_introduction'
+      },
+      {
+        title: 'ちくわ',
+        src:'/various_game.jpg',
+        to:'/gamelists/playable_game_collection/play_game'
+      },
+      {
+        title: 'ちくわ',
+        src:'/various_game.jpg',
+        to:'/gamelists/retro_game_introduction',
+
+      },
+      {
+        title: 'ちくわ',
+        src:'/various_game.jpg',
+        to:'/gamelists/retro_game_introduction',
+
+      },
+    ]
+  })
+})
 </script>
