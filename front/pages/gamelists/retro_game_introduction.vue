@@ -25,7 +25,7 @@ export default Vue.extend({
             this.$axios.get(url)
                 .then((res) => {
                     this.message = res.data;
-                    axios.defaults.headers.common['X-CSRF-Token'] = res.headers['x-csrf-token'];
+                    this.$axios.defaults.headers.common['X-CSRF-Token'] = res.headers['x-csrf-token'];
                 })
                 .catch((error) => {
                     console.log(error);
