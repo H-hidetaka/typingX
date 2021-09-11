@@ -34,6 +34,10 @@ group :development, :test do
   gem 'rspec-rails'
   gem "factory_bot_rails"
   gem 'rspec_junit_formatter'
+  gem 'pry-rails'
+  gem 'pry-doc'    # methodを表示
+  gem 'pry-byebug' # デバッグを実施(Ruby 2.0以降で動作する)
+  gem 'pry-stack_explorer' # スタックをたどれる
 end
 
 group :development do
