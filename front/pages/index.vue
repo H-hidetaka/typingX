@@ -1,18 +1,18 @@
 <template>
-  <v-container fluid >
-      <v-parallax
-        src="/laptop2.png"
-        class="fill-height repeating-gradient"
+  <v-container fluid>
+    <v-parallax
+      src="/laptop2.png"
+      class="fill-height repeating-gradient"
+    >
+      <v-row
+        align="center"
+        justify="center"
+        class="blue-grey--text text--lighten-1"
       >
-        <v-row
-          align="center"
-          justify="center"
-          class="blue-grey--text text--lighten-1"
+        <v-col
+          class="text-center"
+          cols="12"
         >
-          <v-col
-            class="text-center"
-            cols="12"
-          >
           <h1 class="text-h4 font-weight-thin mb-4">
             {{ title }}
           </h1>
@@ -26,7 +26,7 @@
             to="/game_list"
             justify-content="space-between"
           >
-          <spacer></spacer>
+            <spacer />
             <v-icon>mdi-gamepad</v-icon>
             スタート
           </v-btn>

@@ -1,58 +1,58 @@
 <template>
-  <div :class="keyboardClass"></div>
+  <div :class="keyboardClass" />
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import Keyboard from "simple-keyboard";
-import "simple-keyboard/build/css/index.css";
+import Keyboard from 'simple-keyboard';
+import 'simple-keyboard/build/css/index.css';
 
 export default Vue.extend({
-  name: "SimpleKeyboard",
-  props: {
-    keyboardClass: {
-      default: "simple-keyboard",
-      type: String
+    name: 'SimpleKeyboard',
+    props: {
+        keyboardClass: {
+            default: 'simple-keyboard',
+            type: String
+        },
+        input: {
+            type: String
+        }
     },
-    input: {
-      type: String
-    }
-  },
-  data: () => ({
-    keyboard: String
-  }),
-  mounted() {
-    this.keyboard = new Keyboard(this.keyboardClass, {
-      onChange: this.onChange,
-      onKeyPress: this.onKeyPress
-    });
-  },
-  methods: {
-    onChange(input) {
-      this.$emit("onChange", input);
+    data: () => ({
+        keyboard: String
+    }),
+    watch: {
+        input(input) {
+            this.keyboard.setInput(input);
+        }
     },
-    onKeyPress(button) {
-      this.$emit("onKeyPress", button);
+    mounted() {
+        this.keyboard = new Keyboard(this.keyboardClass, {
+            onChange: this.onChange,
+            onKeyPress: this.onKeyPress
+        });
+    },
+    methods: {
+        onChange(input) {
+            this.$emit('onChange', input);
+        },
+        onKeyPress(button) {
+            this.$emit('onKeyPress', button);
 
-      /**
+            /**
        * If you want to handle the shift and caps lock buttons
        */
-      if (button === "{shift}" || button === "{lock}") this.handleShift();
-    },
-    handleShift() {
-      let currentLayout = this.keyboard.options.layoutName;
-      let shiftToggle = currentLayout === "default" ? "shift" : "default";
+            if (button === '{shift}' || button === '{lock}') this.handleShift();
+        },
+        handleShift() {
+            let currentLayout = this.keyboard.options.layoutName;
+            let shiftToggle = currentLayout === 'default' ? 'shift' : 'default';
 
-      this.keyboard.setOptions({
-        layoutName: shiftToggle
-      });
+            this.keyboard.setOptions({
+                layoutName: shiftToggle
+            });
+        }
     }
-  },
-  watch: {
-    input(input) {
-      this.keyboard.setInput(input);
-    }
-  }
 });
 </script>
 

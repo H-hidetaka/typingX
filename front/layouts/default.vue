@@ -1,5 +1,5 @@
 <template>
-  <v-app >
+  <v-app>
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
@@ -50,20 +50,20 @@
     >
       <span>&copy;typingX {{ new Date().getFullYear() }}  </span>
       <v-btn
-            color="black"
-            nuxt
-            to="/privacy_policy"
-            text
-          >
+        color="black"
+        nuxt
+        to="/privacy_policy"
+        text
+      >
         プライバシーポリシー
       </v-btn>
       <v-btn
-            color="black"
-            nuxt
-            to="/terms_of_use"
-            text
-            justify="space-around"
-          >
+        color="black"
+        nuxt
+        to="/terms_of_use"
+        text
+        justify="space-around"
+      >
         利用規約
       </v-btn>
       <!-- <router-link
@@ -75,7 +75,6 @@
           >
           利用規約
       </router-link> -->
-
     </v-footer>
   </v-app>
 </template>

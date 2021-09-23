@@ -1,6 +1,15 @@
 <template>
-  <v-row justify="center" align="center">>
-    <v-col cols="12" sm="8" md="6" class="text-center">
+  <v-row
+    justify="center"
+    align="center"
+  >
+    >
+    <v-col
+      cols="12"
+      sm="8"
+      md="6"
+      class="text-center"
+    >
       <img
         src="/pcman1.jpeg"
         alt="typingX"

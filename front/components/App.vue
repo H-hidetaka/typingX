@@ -3,37 +3,41 @@
     <input
       :value="input"
       class="input"
-      @input="onInputChange"
       placeholder="Tap on the virtual keyboard to start"
+      @input="onInputChange"
     >
-    <SimpleKeyboard @onChange="onChange" @onKeyPress="onKeyPress" :input="input"/>
+    <SimpleKeyboard
+      :input="input"
+      @onChange="onChange"
+      @onKeyPress="onKeyPress"
+    />
   </div>
 </template>
 
 <script>
 import Vue from 'vue';
-import SimpleKeyboard from "./SimpleKeyboard";
-import "./App.css";
+import SimpleKeyboard from './SimpleKeyboard';
+import './App.css';
 
 export default Vue.extend({
-  name: "App",
-  components: {
-    SimpleKeyboard
-  },
-  data: () => ({
-    input: ""
-  }),
-  methods: {
-    onChange(input) {
-      this.input = input;
+    name: 'App',
+    components: {
+        SimpleKeyboard
     },
-    onKeyPress(button) {
-      console.log("button", button);
-    },
-    onInputChange(input) {
-      this.input = input.target.value;
+    data: () => ({
+        input: ''
+    }),
+    methods: {
+        onChange(input) {
+            this.input = input;
+        },
+        onKeyPress(button) {
+            console.log('button', button);
+        },
+        onInputChange(input) {
+            this.input = input.target.value;
+        }
     }
-  }
 });
 </script>
 

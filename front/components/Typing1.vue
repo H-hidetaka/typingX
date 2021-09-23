@@ -6,7 +6,9 @@
       <br>
       miss:{{ miss }}
     </div>
-    <div v-else>Spaceでスタート</div>
+    <div v-else>
+      Spaceでスタート
+    </div>
   </div>
 </template>
 

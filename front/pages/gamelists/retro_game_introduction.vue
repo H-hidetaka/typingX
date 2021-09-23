@@ -1,17 +1,19 @@
 <template>
-    <div class="container">
-        <div>
-            <Card />
-            <div class="text-center">
-                <v-btn @click="getApi()">GET API</v-btn>
-                <div>{{ message }}</div>
-            </div>
-        </div>
+  <div class="container">
+    <div>
+      <Card />
+      <div class="text-center">
+        <v-btn @click="getApi()">
+          GET API
+        </v-btn>
+        <div>{{ message }}</div>
+      </div>
     </div>
+  </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from 'vue';
 
 export default Vue.extend({
     data: () => {

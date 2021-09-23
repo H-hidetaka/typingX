@@ -1,10 +1,10 @@
 <script lang="ts">
-import Vue from 'vue'
+import Vue from 'vue';
 //@ts-ignore
-import { RetroGameProps } from '../types'
+import { RetroGameProps } from '../types';
 
 export default Vue.extend({
-})
+});
 // import Vue from 'vue'
 // import { StateProps, ReturnStateProps } from '@/types'
 // import { retrogamesData } from '~/types'

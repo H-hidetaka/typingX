@@ -18,18 +18,18 @@
               gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
               height="200px"
             >
-            <v-btn
-            v-text="card.title"
-            color="blue-grey lighten-1 white--text"
-            nuxt
-            :href="card.to"
-            >
-              <v-icon>{{ card.icon }}</v-icon>
-            </v-btn>
+              <v-btn
+                color="blue-grey lighten-1 white--text"
+                nuxt
+                :href="card.to"
+                v-text="card.title"
+              >
+                <v-icon>{{ card.icon }}</v-icon>
+              </v-btn>
             </v-img>
 
             <v-card-actions>
-              <v-spacer></v-spacer>
+              <v-spacer />
             </v-card-actions>
           </v-card>
         </v-col>
