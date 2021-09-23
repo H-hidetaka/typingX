@@ -1,13 +1,20 @@
 Rails.application.routes.draw do
-  get 'static_pages/top'
+  root to: 'home#index'
+
   namespace :api do
     namespace :v1 do
       resources :posts, only: [:index]
       resources :typings, only: [:index]
-      resources :users, only: %i[new create]
-      get 'login', to: 'user_sessions#new'
-      post 'login', to: 'user_sessions#create'
-      post 'logout', to: 'user_sessions#destroy'
+      resources :sessions
+      resources :users do
+        collection do
+          get 'me'
+        end
+      end
+      resources :profile
     end
-  end
+
+    get '*path', to: 'home#index', constraints: lambda { |req|
+      req.path.exclude? 'rails/active_storage'
+    }
 end
