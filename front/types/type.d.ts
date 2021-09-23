@@ -1,7 +1,14 @@
 type PhaseProps = ''
 
+export interface CardProps {
+  title: string
+  src: string
+  flex: number
+  to: string
+  icon: string
+}
 
-interface RetroGameProps {
+export interface RetroGameProps {
   name: string
   roman: string
   src: string
@@ -16,10 +23,6 @@ interface StateProps {
   retroGamesRelationData: RetroGameProps[]
   timerId: any
 }
-
-type
-
-
 
 export interface TypeData {
   type: {

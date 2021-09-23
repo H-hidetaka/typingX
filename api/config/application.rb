@@ -35,6 +35,9 @@ module Api
     # Only loads a smaller set of middleware suitable for API only apps.
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
+    config.middleware.use ActionDispatch::Cookies
+    config.action_controller.forgery_protection_origin_check = false
+    config.parent_controller = 'ActionController::Base'
     config.api_only = true
   end
 end

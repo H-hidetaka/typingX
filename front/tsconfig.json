@@ -12,6 +12,8 @@
     "allowJs": true,
     "sourceMap": true,
     "strict": true,
+    "declaration": true,
+    "noImplicitAny": false,
     "noEmit": true,
     "experimentalDecorators": true,
     "baseUrl": ".",

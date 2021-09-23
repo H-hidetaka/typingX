@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "dev-debug": "node --inspect-brk=9229 node_modules/nuxt/bin/nuxt",
     "dev": "nuxt-ts",
     "build": "nuxt-ts build",
     "start": "nuxt-ts start",
@@ -31,6 +32,7 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^27.0.5",
     "eslint": "^7.32.0",
+    "gulp-sourcemaps": "^3.0.0",
     "jest": "^27.0.5",
     "rimraf": "^3.0.2",
     "sirv-cli": "^1.0.12",

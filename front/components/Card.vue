@@ -1,51 +1,96 @@
 <template>
-<v-container>
+  <v-container fluid>
+    <v-row>
+      <h3 class="mx-auto"
+      color="deep-purple lighten-2">レトロゲームリスト一覧</h3>
+    </v-row>
     <v-row justify="center">
+
       <v-col
-        v-for="n in 14"
-        :key="n"
+        v-for="card in cards"
+        :key="card.title"
         cols="auto"
+        {{ card.info }}
       >
-        <v-card dark color="black" width="200" height="200" class="ma-2">
-          <v-card-title class="headline">title</v-card-title>
-          <v-card-subtitle>card subtitle</v-card-subtitle>
-          <v-divider class="mx-3"></v-divider>
-          <v-card-text>
-            <div class="body-1 mb-1">card text. card text. card text. card text. card text. card text. card text. card text. card text. card text. card text.</div>
-            <div class="body-2 mb-1">card text. card text. card text. card text. card text. card text. card text. card text. card text. card text. card text.</div>
-          </v-card-text>
-          <v-card-actions>
-            <v-spacer></v-spacer>
-            <!-- <v-btn small>OK</v-btn>
-            <v-btn x-small>Cancel</v-btn> -->
-          </v-card-actions>
-          </v-card>
+        <v-card
+          :height="180"
+          :width="180"
+          color="light-blue"
+          :href="card.to"
+        >
+          <v-card-title v-text="card.title">
+          </v-card-title>
+            <v-row
+              class="fill-height"
+              align="center"
+              justify="center"
+              v-text="card.body"
+            >
+            </v-row>
+        </v-card>
       </v-col>
     </v-row>
-</v-container>
+  </v-container>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
 
 export default Vue.extend({
-    data () {
-        return {
-            colors: [
-                'indigo',
-                'warning',
-                'pink darken-2',
-                'red lighten-1',
-                'deep-purple accent-4',
-            ],
-            slides: [
-                'First',
-                'Second',
-                'Third',
-                'Fourth',
-                'Fifth',
-            ],
-        };
-    },
+  data: () => {
+      return {
+        info: ''
+      };
+  },
+  //   cards: [
+  //     {
+  //       title: '1',
+  //       to:'/gamelists/retro_game_introduction',
+  //       body:'No.1 チュートリアル'
+  //     },
+  //     {
+  //       title: '2',
+  //       to:'/gamelists/playable_game_collection/play_game',
+  //       body:'No.1 チュートリアル'
+  //     },
+  //     {
+  //       title: '3',
+  //       to:'/gamelists/retro_game_introduction',
+  //       body:'No.1 チュートリアル'
+  //     },
+  //     {
+  //       title: '4',
+  //       to:'/gamelists/retro_game_introduction',
+  //       body:'No.1 チュートリアル'
+  //     },
+  //     {
+  //       title: '4',
+  //       to:'/gamelists/retro_game_introduction',
+  //       body:'No.1 チュートリアル'
+  //     },
+  //     {
+  //       title: '4',
+  //       to:'/gamelists/retro_game_introduction',
+  //       body:'No.1 チュートリアル'
+  //     },
+  //   ]
+  // }),
+    methods: {
+        getApi() {
+            const url = '/api/v1/posts';
+            this.$axios.get(url)
+                .then((res) => {
+                    this.message = res.data;
+                    this.$axios.defaults.headers.common['X-CSRF-Token'] = res.headers['x-csrf-token'];
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        }
+    }
 });
+    // mounted() {
+    //   axios
+    //   .get('https://')
+    // },
 </script>

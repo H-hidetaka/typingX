@@ -14,22 +14,15 @@
     miss:{{ miss }}
     </div>
     <div v-else>Spaceでスタート</div>
-    <div>
-    <App />
-    </div>
 </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import App from "./App";
 
 Vue.config.productionTip = false;
 
 export default Vue.extend({
-    components: {
-        App
-    },
 data() {
     return {
     jaword: ['魔大戦'],

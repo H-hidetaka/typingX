@@ -48,7 +48,7 @@ export default Vue.extend({
                 title: 'ゲーム紹介',
                 src: '/various_game.jpg',
                 flex: 12,
-                to: '/gamelists/game_introduction',
+                to: '/gamelists/retro_game_introduction',
                 icon: 'mdi-gamepad-variant'
             },
             {
