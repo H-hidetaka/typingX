@@ -52,17 +52,17 @@ export default Vue.extend({
                 icon: 'mdi-gamepad-variant'
             },
             {
-                title: '日常',
+                title: 'ゲーム名言・迷言集',
                 src: '/life.jpg',
                 flex: 6,
-                to: '/gamelists/everyday',
+                to: '/gamelists/game_quotes_collection',
                 icon: 'mdi-gamepad'
             },
             {
-                title: 'タイピング矯正',
+                title: 'キャラ・武器の名前の由来',
                 src: '/typing.jpeg',
                 flex: 6,
-                to: '/gamelists/typing_correction',
+                to: '/gamelists/character_weapon_name_origin',
                 icon: 'mdi-gamepad-variant'
             },
         ],

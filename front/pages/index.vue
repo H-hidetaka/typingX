@@ -23,7 +23,7 @@
             color="blue-grey lighten-1"
             class="white--text text--lighten-1"
             nuxt
-            to="/game_list"
+            to="/gamelists/game_list"
             justify-content="space-between"
           >
             <spacer />
@@ -37,7 +37,7 @@
 </template>
 
 <script lang="ts">
-import Vue, { PropOptions } from 'vue';
+import Vue from 'vue';
 
 export default Vue.extend({
     data: () => {

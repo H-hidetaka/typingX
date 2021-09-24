@@ -39,6 +39,7 @@
       <v-toolbar-title v-text="title" />
       <v-spacer />
     </v-app-bar>
+
     <v-main>
       <v-container>
         <Nuxt />
@@ -52,7 +53,7 @@
       <v-btn
         color="black"
         nuxt
-        to="/privacy_policy"
+        to="/about/privacy_policy"
         text
       >
         プライバシーポリシー
@@ -60,21 +61,12 @@
       <v-btn
         color="black"
         nuxt
-        to="/terms_of_use"
+        to="/about/terms_of_use"
         text
         justify="space-around"
       >
         利用規約
       </v-btn>
-      <!-- <router-link
-                  to="/terms_of_use"
-                  tag="onclick"
-                  align="center"
-                  justify-content="space-between"
-                  cursor="onclick"
-          >
-          利用規約
-      </router-link> -->
     </v-footer>
   </v-app>
 </template>
@@ -93,25 +85,20 @@ export default {
                     to: '/'
                 },
                 {
-                    icon: 'mdi-format-list-bulleted-triangle',
-                    title: 'ゲーム一覧',
-                    to: '/game_list'
+                    icon: 'mdi-account-plus',
+                    title: 'ユーザー登録',
+                    to: '/register'
                 },
                 {
-                    icon: 'mdi-microsoft-xbox-controller',
-                    title: 'ゲーム紹介',
-                    to: '/gamelists/retro_game_introduction'
+                    icon: 'mdi-login-variant',
+                    title: 'ログイン',
+                    to: '/login'
                 },
                 {
-                    icon: 'mdi-human',
-                    title: '日常',
-                    to: '/gamelists/everyday'
+                    icon: 'mdi-information-outline',
+                    title: 'このサイトについて',
+                    to: '/about/index'
                 },
-                {
-                    icon: 'mdi-keyboard-variant',
-                    title: 'タイピング矯正',
-                    to: '/gamelists/typing_correction'
-                }
             ],
             miniVariant: false,
             right: true,
