@@ -7,7 +7,7 @@
       max-width="640"
     >
       <v-card-title class="text-center pa-8">
-        <h4 class="fill-width">会員情報入力</h4>
+        <h4 class="fill-width">ログイン</h4>
       </v-card-title>
       <v-divider> </v-divider>
       <div class="px-6 py-8">
@@ -81,6 +81,11 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { ValidationProvider, ValidationObserver, extend } from 'vee-validate';
+import * as rules from 'vee-validate/dist/rules';
+
+Vue.component('ValidationProvider', ValidationProvider);
+Vue.component('ValidationObserver', ValidationObserver);
 
 export default Vue.extend({
   layout: 'auth',
@@ -105,8 +110,21 @@ export default Vue.extend({
           '半角英小文字大文字数字をそれぞれ1種類以上含む7文字以上128文字以下で入力してください'
       }
     }
+  },
+  methods: {
+      getApi() {
+          const url = '/api/v1/sessions_users';
+          this.$axios.get(url)
+              .then((res) => {
+                  this.message = res.data;
+                  this.$axios.defaults.headers.common['X-CSRF-Token'] = res.headers['x-csrf-token'];
+              })
+              .catch((error) => {
+                  console.log(error);
+              });
+      }
   }
-})
+});
 </script>
 
 <style scoped>

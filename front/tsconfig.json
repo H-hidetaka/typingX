@@ -27,10 +27,10 @@
       ]
     },
     "types": [
-      "@types/node",
-      "@nuxtjs/axios",
-      // "@nuxtjs/vue-app",
       "@nuxt/types",
+      "@nuxtjs/axios",
+      "@types/node",
+      // "@nuxtjs/vue-app",
     ]
   },
   "exclude": [
