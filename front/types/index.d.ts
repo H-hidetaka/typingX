@@ -1,6 +1,19 @@
 import './type';
+import { accessorType } from '~/store'
 
 type PhaseProps = ''
+
+declare module 'vue/types/vue' {
+  interface Vue {
+    $accessor: typeof accessorType
+  }
+}
+
+declare module '@nuxt/types' {
+  interface NuxtAppOptions {
+    $accessor: typeof accessorType
+  }
+}
 
 export interface CardProps {
   title: string

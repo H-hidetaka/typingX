@@ -1,164 +1,118 @@
 <template>
-  <div>
-    <v-card
-      :tile="$vuetify.breakpoint.sm || $vuetify.breakpoint.xs"
-      class="mx-auto fill-width"
-      flat
-      max-width="640"
-    >
-      <v-card-title class="text-center pa-8">
-        <h4 class="fill-width">ログイン</h4>
-      </v-card-title>
-      <v-divider> </v-divider>
-      <div class="px-6 py-8">
-        <div style="max-width:344px" class="mx-auto">
-          <div>
-            <v-btn
-              class="fill-width text-capitalize caption"
-              height="48px"
-              outlined
-              style="border-color:#979797;"
-              tile
-            >
-              <img
-                class="button-logo-img mr-4"
-                src="https://madeby.google.com/static/images/google_g_logo.svg"
-                style="height:24px;, width:24px;"
-              />
-              Googleで登録
-            </v-btn>
-          </div>
-          <div class="separator separator_login_page">
-            <div class="middle_separator">または</div>
-          </div>
-          <div class="pt-6">
-            <div>
-              <v-text-field
-                v-model="email"
-                :rules="[emailRules.required, emailRules.regex]"
-                autofocus
-                dense
-                height="48px"
-                outlined
-                placeholder="メールアドレス"
-              ></v-text-field>
-
-              <v-text-field
-                v-model="password"
-                :append-icon="passwordShow ? 'mdi-eye' : 'mdi-eye-off'"
-                :rules="[passwordRules.required, passwordRules.regex]"
-                :type="passwordShow ? 'text' : 'password'"
-                dense
-                height="48px"
-                name="input-password"
-                outlined
-                placeholder="パスワード"
-                @click:append="passwordShow = !passwordShow"
-              ></v-text-field>
-            </div>
-            <div class="login-btn pb-8">
-              <v-btn
-                class="fill-width caption"
-                color="#FFCB00"
-                depressed
-                height="48px"
-                tile
-              >
-                会員登録
-              </v-btn>
-            </div>
-            <v-divider></v-divider>
-            <div class="pt-8 pb-4">
-              <span>すでにアカウントをお持ちですか？</span>
-              <nuxt-link to="/login">ログインに移動</nuxt-link>
-            </div>
-          </div>
-        </div>
+  <div
+    id="register-form"
+    class="container w-50 text-center"
+  >
+    <div class="h3 mb-3">
+      ユーザー登録
+    </div>
+    <ValidationObserver v-slot="{ handleSubmit }">
+      <div class="form-group text-left">
+        <ValidationProvider
+          v-slot="{ errors }"
+          rules="required"
+        >
+          <label for="name">ユーザー名</label>
+          <input
+            id="name"
+            v-model="user.name"
+            name="ユーザー名"
+            type="text"
+            class="form-control"
+            placeholder="username"
+          >
+          <span class="text-danger">{{ errors[0] }}</span>
+        </ValidationProvider>
       </div>
-    </v-card>
+      <div class="form-group text-left">
+        <ValidationProvider
+          v-slot="{ errors }"
+          rules="required|email"
+        >
+          <label for="email">メールアドレス</label>
+          <input
+            id="email"
+            v-model="user.email"
+            name="メールアドレス"
+            type="email"
+            class="form-control"
+            placeholder="test@example.com"
+          >
+          <span class="text-danger">{{ errors[0] }}</span>
+        </ValidationProvider>
+      </div>
+      <div class="form-group text-left">
+        <ValidationProvider
+          v-slot="{ errors }"
+          rules="required"
+          vid="password"
+        >
+          <label for="password">パスワード</label>
+          <input
+            id="password"
+            v-model="user.password"
+            name="パスワード"
+            type="password"
+            class="form-control"
+            placeholder="password"
+          >
+          <span class="text-danger">{{ errors[0] }}</span>
+        </ValidationProvider>
+      </div>
+      <div class="form-group text-left">
+        <ValidationProvider
+          v-slot="{ errors }"
+          rules="required|min:3|password_confirmed:@password"
+        >
+          <label for="password_confirmation">パスワード（確認）</label>
+          <input
+            id="password_confirmation"
+            v-model="user.password_confirmation"
+            name="パスワード（確認）"
+            type="password"
+            class="form-control"
+            placeholder="password"
+          >
+          <span class="text-danger">{{ errors[0] }}</span>
+        </ValidationProvider>
+      </div>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        @click="handleSubmit(register)"
+      >
+        登録
+      </button>
+    </ValidationObserver>
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import { ValidationProvider, ValidationObserver, extend } from 'vee-validate';
-import * as rules from 'vee-validate/dist/rules';
-
-Vue.component('ValidationProvider', ValidationProvider);
-Vue.component('ValidationObserver', ValidationObserver);
-
-export default Vue.extend({
-  layout: 'auth',
+<script>
+export default {
+  name: "RegisterIndex",
   data() {
     return {
-      email: null,
-      emailRules: {
-        required: (value: string | boolean) =>
-          !!value || 'メールアドレスは必須です',
-        regex: (value: any) =>
-          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-            value
-          ) || 'メールアドレスの形式が違います'
-      },
-      password: null,
-      passwordShow: false,
-      passwordRules: {
-        required: (value: string | boolean) =>
-          !!value || 'パスワードは必須です',
-        regex: (value: any) =>
-          /^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?\d)[a-zA-Z\d]{8,128}$/.test(value) ||
-          '半角英小文字大文字数字をそれぞれ1種類以上含む7文字以上128文字以下で入力してください'
+      user: {
+        name: '',
+        email: '',
+        password: '',
+        password_confirmation: '',
       }
     }
   },
   methods: {
-      getApi() {
-          const url = '/api/v1/sessions_users';
-          this.$axios.get(url)
-              .then((res) => {
-                  this.message = res.data;
-                  this.$axios.defaults.headers.common['X-CSRF-Token'] = res.headers['x-csrf-token'];
-              })
-              .catch((error) => {
-                  console.log(error);
-              });
-      }
+    register() {
+      this.$axios.post('users', { user: this.user })
+        .then(res => {
+          this.$router.push({ name: 'LoginIndex' })
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    }
   }
-});
+}
 </script>
 
 <style scoped>
-.fill-width {
-  width: 100%;
-}
-.link-caption {
-  text-decoration: none;
-  color: #666 !important;
-  font-size: .75rem;
-}
-.separator {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  height: 0;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #fff;
-  position: relative;
-}
-.middle_separator {
-  position: absolute;
-  padding: 0 16px;
-  color: #ccc;
-  background: #fff;
-  font-size: 11px;
-  text-shadow: 0 1px 0 #fff;
-  text-transform: uppercase;
-  top: -7px;
-  left: 30%;
-}
-.middle_separator {
-  color: #777;
-  font-size: 13px;
-  top: -9px;
-  left: 41%;
-}
 </style>
