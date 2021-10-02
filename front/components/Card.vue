@@ -78,19 +78,6 @@ export default Vue.extend({
     //     },
     //   ]
     // }),
-    methods: {
-        getApi() {
-            const url = '/api/v1/posts';
-            this.$axios.get(url)
-                .then((res) => {
-                    this.message = res.data;
-                    this.$axios.defaults.headers.common['X-CSRF-Token'] = res.headers['x-csrf-token'];
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
-        }
-    }
 });
 // mounted() {
 //   axios

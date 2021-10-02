@@ -23,10 +23,10 @@ export default Vue.extend({
     },
     methods: {
         getApi() {
-            const url = '/api/v1/posts';
+            const url = '/api/v1/users';
             this.$axios.get(url)
                 .then((res) => {
-                    this.message = res.data;
+                    this.card = res.data;
                     this.$axios.defaults.headers.common['X-CSRF-Token'] = res.headers['x-csrf-token'];
                 })
                 .catch((error) => {
