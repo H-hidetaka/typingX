@@ -32,6 +32,7 @@ export default {
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [
+        '@/plugins/vee-validate',
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
@@ -50,7 +51,20 @@ export default {
     modules: [
         '@nuxtjs/axios',
         '@nuxtjs/proxy',
+        '@nuxtjs/i18n',
     ],
+
+    // i18n: {
+    //     locales: ['ja'],
+    //     defaultLocale: 'ja',
+    //     langDir: 'lang/',
+    //     vueI18n: {
+    //         fallbackLocale: 'ja',
+    //         },
+    //     vueI18nLoader: true,
+    //     lazy: true,
+    //     },
+    //   },
 
     proxy: {
         '/api': {
@@ -81,6 +95,9 @@ export default {
     build: {
         transpile: [
             /typed-vuex/,
+            "vee-validate/dist/rules"
         ],
+        extend(config, ctx) {
+        }
     }
 };
