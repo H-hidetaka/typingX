@@ -1,16 +1,25 @@
 import Vue from 'vue';
 import { ValidationProvider, ValidationObserver, extend } from 'vee-validate';
-import * as originalRules from 'vee-validate/dist/rules';
-import ja from '@/lang/vee-validate/ja';
+// import * as originalRules from 'vee-validate/dist/rules';
+import * as rules from 'vee-validate/dist/rules'
+import ja from 'vee-validate/dist/locale/ja.json'
 
+Object.keys(rules).forEach((rule) => {
+  extend(rule, rules[rule])
+});
 
-// 全てのルールをインポート
-let rule;
-for (rule in originalRules) {
+for (let [rule, validation] of Object.entries(rules)) {
   extend(rule, {
-    ...originalRules[rule], // eslint-disable-line
+    ...validation
   });
 }
+// 全てのルールをインポート
+// let rule;
+// for (rule in originalRules) {
+//   extend(rule, {
+//     ...originalRules[rule], // eslint-disable-line
+//   });
+// }
 
 localize('ja', ja);
 

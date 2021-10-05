@@ -6,6 +6,7 @@
     <div class="h3 mb-3">
       ユーザー登録
     </div>
+    <p>{{ $t('apple') }}</p>
     <ValidationObserver v-slot="{ handleSubmit }">
       <div class="form-group text-left">
         <ValidationProvider
