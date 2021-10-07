@@ -8,5 +8,5 @@
     >
       <v-card-title
     </v-card>
-
+      </v-card-title>
 </template>
