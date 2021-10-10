@@ -22,3 +22,14 @@ localize('ja', ja);
 
 Vue.component('ValidationProvider', ValidationProvider);
 Vue.component('ValidationObserver', ValidationObserver);
+
+
+// extend('email', {
+//   ...email,
+//   message: '{_field_}の形式で入力してください'
+// });
+
+// extend('required', {
+//   ...required,
+//   message: '{_field_}は必須項目です'
+// });

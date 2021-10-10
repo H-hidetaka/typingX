@@ -1,6 +1,7 @@
 import colors from 'vuetify/es5/util/colors';
+import { NuxtConfig } from '@nuxt/types'
 
-export default {
+const nuxtConfig: NuxtConfig = {
     server: {
         port: 8080
     },
@@ -97,3 +98,5 @@ export default {
     extend(config, ctx) {}
     }
 }
+
+export default nuxtConfig
