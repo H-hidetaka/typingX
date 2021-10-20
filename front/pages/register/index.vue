@@ -123,6 +123,7 @@ export default Vue.extend({
   //   ValidationObserver,
   // },
   data() {
+
     return {
       user: {
         name: '',

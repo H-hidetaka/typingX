@@ -38,6 +38,9 @@
       </v-btn>
       <v-toolbar-title v-text="title" />
       <v-spacer />
+        <v-spacer></v-spacer>
+        <Avatar />
+          <!-- <v-icon>mdi-dots-vertical</v-icon> -->
     </v-app-bar>
     <v-app-bar height="128px" color="#F5F5F5" dense flat>
       <div class="header-title justify-center d-flex fill-width">
@@ -77,7 +80,13 @@
 </template>
 
 <script>
-export default {
+import Vue from 'vue'
+import Avatar from '~/components/Avatar.vue';
+
+export default Vue.extend({
+    components: {
+        Avatar,
+    },
     data () {
         return {
             clipped: false,
@@ -102,7 +111,7 @@ export default {
                 {
                     icon: 'mdi-information-outline',
                     title: 'このサイトについて',
-                    to: '/about/index'
+                    to: '/about'
                 },
             ],
             miniVariant: false,
@@ -111,5 +120,5 @@ export default {
             title: 'typingX'
         };
     }
-};
+});
 </script>

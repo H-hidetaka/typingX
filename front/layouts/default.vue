@@ -97,13 +97,13 @@ export default {
                 {
                     icon: 'mdi-information-outline',
                     title: 'このサイトについて',
-                    to: '/about/index'
+                    to: '/about'
                 },
             ],
             miniVariant: false,
             right: true,
             rightDrawer: false,
-            title: 'typingX'
+            title: 'RetroTypingX'
         };
     }
 };
