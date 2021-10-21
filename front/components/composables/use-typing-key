@@ -1,0 +1,6 @@
+import { InjectionKey } from 'vue'
+import { TypingStore } from '@/utils/useTyping'
+
+const TypingKey: InjectionKey<TypingStore> = Symbol('TypingStore')
+
+export default TypingKey

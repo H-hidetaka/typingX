@@ -99,6 +99,11 @@ export default {
                     title: 'このサイトについて',
                     to: '/about'
                 },
+                {
+                    icon: 'mdi-information-outline',
+                    title: 'ゲーム部分',
+                    to: '/gamelists/playable_game_collection/play_game'
+                },
             ],
             miniVariant: false,
             right: true,
