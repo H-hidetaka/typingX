@@ -6,6 +6,11 @@ Rails.application.routes.draw do
       resources :posts, only: [:index]
       resources :typings, only: [:index]
       resources :sessions
+      resources :character_weapon_name_origin
+      resources :retro_game_introduction
+      resources :game_list
+      resources :game_quotes_collection
+
       resources :users do
         collection do
           get 'me'
