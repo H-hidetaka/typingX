@@ -1,5 +1,5 @@
 import './type';
-import { accessorType } from '~/store'
+import { accessorType } from '@/store/index';
 
 type PhaseProps = ''
 
